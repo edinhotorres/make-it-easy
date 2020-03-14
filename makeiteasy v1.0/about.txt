@@ -1,0 +1,9 @@
+********************************************************
+v1.0
+********************************************************
+Primeira versão da aplicação.
+
+Tem o simples objetivo de filtrar números de forma 
+automática em texto inserido pelo usuário (tem tempo de 
+digitação) e, assim, agilizar procedimentos rotineiros.
+********************************************************
