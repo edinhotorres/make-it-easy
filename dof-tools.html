@@ -22,7 +22,7 @@
         <div class="menu">
             <ul>
                 <li>
-                    <a href="makeiteasy.html">Início</a>
+                    <a href="index.html">Início</a>
                 </li>
                 <li>
                     <a href="dof-tools.html">DOF Tools</a>
@@ -34,28 +34,17 @@
         </div>
     </header>
     <div class="grade-de-aplicacoes">
-    <!-- Filtro de Números -->
-        <div class="filtro-de-numeros">
-            <h2>Filtro de Números</h2>
-            <h3>Filtre os números do seu texto</h3>
-            <input type="text" name="" id="string-cliente" oninput="filtra('string-cliente','filtrado')" title="Vamos lá, mande um Ctrl+V!" placeholder="Cole aqui o texto a ser filtrado!">
-            <div id='container-filtrado'>
-                <p id="filtrado"></p>
+    <!-- Descrição 78 -->
+        <div class="descricao-78">
+                <h2>Descrição 78 Caracteres</h2>
+                <h3>Quebre descrições em linhas de 78 caracteres</h3>
+                <textarea id="descricao-cliente" cols="115" rows="6" oninput="quebra('descricao-cliente','quebrado')" title="Vamos lá, mande um Ctrl+V!" placeholder="Cole aqui o texto a ser quebrado!"></textarea>
+                <p id="quebrado"></p>
+                <div class="botoes">
+                    <!-- <button class="botao" onclick="quebra('descricao-cliente','quebrado')">Quebrar!</button> botao descontinuado -->
+                    <button class="botao" onclick="limpa('descricao-cliente','quebrado')">Limpar</button>
+                </div>
             </div>
-            <div class="botoes">
-                <!-- <button class="botao" onclick="filtra('string-cliente','filtrado')">Filtrar</button> botao descontinuado -->
-                <button class="botao" onclick="limpa('string-cliente','filtrado')">Limpar</button>
-            </div>
-        </div>
-        <!-- Certidões Option -->
-        <div class="certidoes-option" id="certidoes-option" style="display: none;">
-            <h2>CNPJ Detectado!</h2>
-            <h3>Deseja buscar as principais certidões?</h3>
-            <button class="botao" onclick="busca(event)">Buscar!</button>
-        </div>
     </div>
 </body>
-<script>
-    start()
-</script>
 </html>
