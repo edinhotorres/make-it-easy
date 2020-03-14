@@ -16,12 +16,12 @@
             margin: 0;
             background-color: aliceblue;
         }
-
         header {
             /* border: 3px solid red; */
             display: flex;
             align-items: center;
             background-color: rgb(226, 230, 255);
+            /* background: rgb(161, 203, 241); */
             height: 70px;
             padding: 0;
         }
@@ -65,11 +65,17 @@
             font-size: 1.4em;
             color: darkblue;
         }
-
-        .filtro-de-numeros {
+        .grade-de-aplicacoes {
+            display: flex;
+        }
+        /****************************/
+        /**** Filtro de Números *****/
+        /****************************/
+        .filtro-de-numeros, .descricao-78 {
             /* border: 3px solid red; */
             position: relative; /* relativa ao elemento-pai */
             padding: 15px;
+            margin-left: 20px;
             background-color: rgb(209, 222, 236);
             color: darkblue;
             font-family: 'Share Tech', sans-serif;
@@ -77,9 +83,13 @@
             font-weight: 10;
             text-align: center;
             top: 20px;
-            left: 20px;
-            width: 300px;
             box-shadow: 1px 1px 9px 0px;
+        }
+        .filtro-de-numeros{
+            width: 300px;
+        }
+        .descricao-78{
+            width: 1000px;
         }
         #string-cliente {
             height: 35px;
@@ -102,7 +112,6 @@
             font-size: 1.3em;
             color: rgb(44, 44, 243);
         }
-
         .botoes {
             display: flex;
             justify-content: center;
@@ -121,6 +130,25 @@
         .botao:hover {
             background: rgb(140, 195, 246);
         }
+        /****************************/
+        /* Descrição 78 Caracteres **/
+        /****************************/
+        #descricao-cliente {
+            font-family: 'Share Tech', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 1000;
+            font-size: 1em;
+        }
+        #quebrado {
+            display: relative;
+            text-align: center;
+            word-wrap: break-word;
+            padding: 0 70px 0 70px;
+            font-size: 1.3em;
+            color: rgb(44, 44, 243);
+            text-align-last: justify;
+        }
+        
 
     </style>
     <script>
@@ -137,6 +165,27 @@
         document.getElementById(campoFiltrado).innerHTML=''; // insere HTML entre as tags. exemplo: <p> texto inserido </p>
     }
 
+    function quebra(campoQuebrar, campoQuebrado){
+        // descobre quantos blocos de 78 caracteres existem
+        let ciclosInteiros = parseInt((document.getElementById(campoQuebrar).value.toString().length)/78);
+        // descobre quantos caracteres ficarão de fora dos blocos de 78
+        let caracteresRestantes = (document.getElementById(campoQuebrar).value.toString().length)%78;
+        // recebe o texto inserido no campo a ser quebrado
+        let texto = document.getElementById(campoQuebrar).value.toString();
+        // inicia algoritmo para manipulação do texto
+        let contador = 0;
+        let textoManipulado = "";
+        for (i=0; i<ciclosInteiros; i++) {
+            // concatena quebra de linha a cada 78 caracteres (ciclo se repete para todos os possiveis blocos de 78)
+            textoManipulado = textoManipulado.concat(texto.substr(contador, 78));
+            textoManipulado = textoManipulado.concat("<br>");
+            contador = contador + 78;
+        }
+        // apos terminada a concatenacao dos blocos de 78 com as quebras de linha, concatena os caracteres restantes
+        textoManipulado = textoManipulado.concat(texto.substr(contador, caracteresRestantes));
+        // lança resultado (texto manipulado) ao campo quebrado para que usuario possa copiar
+        document.getElementById(campoQuebrado).innerHTML=textoManipulado;
+    }
     </script>
 </head>
 
@@ -161,18 +210,28 @@
             </ul>
         </div>
     </header>
-
+    <div class="grade-de-aplicacoes">
     <!-- Filtro de Números -->
-    <div class="filtro-de-numeros">
-        <h2>Filtro de Números</h2>
-        <h3>Filtre os números do seu texto!</h3>
-        <input type="text" name="" id="string-cliente" oninput="filtra('string-cliente','filtrado')" title="Vamos lá, mande um Ctrl+V!" placeholder="Cole aqui o texto a ser filtrado!">
-        <p id="filtrado"></p>
-        <div class="botoes">
-            <!-- <button class="botao" onclick="filtra('string-cliente','filtrado')">Filtrar</button> botao descontinuado -->
-            <button class="botao" onclick="limpa('string-cliente','filtrado')">Limpar</button>
+        <div class="filtro-de-numeros">
+            <h2>Filtro de Números</h2>
+            <h3>Filtre os números do seu texto</h3>
+            <input type="text" name="" id="string-cliente" oninput="filtra('string-cliente','filtrado')" title="Vamos lá, mande um Ctrl+V!" placeholder="Cole aqui o texto a ser filtrado!">
+            <p id="filtrado"></p>
+            <div class="botoes">
+                <!-- <button class="botao" onclick="filtra('string-cliente','filtrado')">Filtrar</button> botao descontinuado -->
+                <button class="botao" onclick="limpa('string-cliente','filtrado')">Limpar</button>
+            </div>
         </div>
+        <div class="descricao-78">
+                <h2>Descrição 78 Caracteres</h2>
+                <h3>Quebre descrições em linhas de 78 caracteres</h3>
+                <textarea id="descricao-cliente" cols="115" rows="6" oninput="quebra('descricao-cliente','quebrado')" title="Vamos lá, mande um Ctrl+V!" placeholder="Cole aqui o texto a ser quebrado!"></textarea>
+                <p id="quebrado"></p>
+                <div class="botoes">
+                    <!-- <button class="botao" onclick="quebra('descricao-cliente','quebrado')">Quebrar!</button> botao descontinuado -->
+                    <button class="botao" onclick="limpa('descricao-cliente','quebrado')">Limpar</button>
+                </div>
+            </div>
     </div>
-    
 </body>
 </html>
