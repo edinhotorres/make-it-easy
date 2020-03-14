@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: aliceblue;
+}
+header {
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+    /* background: linear-gradient(to right, rgb(226, 230, 255), aliceblue); */
+    background-color: rgb(226, 230, 255);
+    /* background: rgb(161, 203, 241); */
+    height: 70px;
+    padding: 0;
+}
+header img {
+    height: 80%;
+    padding-left: 0.5%;
+}
+.menu {
+    height: 100%;
+}
+.menu ul {
+    /* border: 3px solid red; */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    box-sizing: border-box; 
+    width: 250px;
+    padding: 0px 20px 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.menu li{
+    /* border: 3px solid red; */
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* font-family: 'Mansalva', cursive; */
+    font-family: 'Share Tech', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    font-size: 1.4em;
+    color: darkblue;
+}
+.grade-de-aplicacoes {
+    display: flex;
+}
+/****************************/
+/**** Filtro de Números *****/
+/****************************/
+.filtro-de-numeros, .descricao-78, .certidoes-option {
+    /* border: 3px solid red; */
+    position: relative; /* relativa ao elemento-pai */
+    padding: 15px;
+    margin-left: 20px;
+    background-color: rgb(209, 222, 236);
+    color: darkblue;
+    font-family: 'Share Tech', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 10;
+    text-align: center;
+    top: 20px;
+    box-shadow: 1px 1px 9px 0px;
+}
+.filtro-de-numeros{
+    width: 300px;
+}
+.descricao-78{
+    width: 1000px;
+}
+#string-cliente {
+    height: 35px;
+    width: 270px;
+    font-family: 'Share Tech', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    font-size: 1em;
+    text-align: center;
+    color: rgb(87, 87, 248);
+}
+#string-cliente:focus::-webkit-input-placeholder  {
+    color: transparent;
+}
+#filtrado {
+    display: relative;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 0 20px 0 20px;
+    font-size: 1.3em;
+    color: rgb(44, 44, 243);
+}
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+.botao {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    font-family: 'Share Tech', sans-serif;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 25px;
+    background: rgb(161, 203, 241);
+}
+.botao:hover {
+    background: rgb(140, 195, 246);
+}
+/****************************/
+/* Descrição 78 Caracteres **/
+/****************************/
+#descricao-cliente {
+    font-family: 'Share Tech', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    font-size: 1em;
+}
+#quebrado {
+    display: relative;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 0 70px 0 70px;
+    font-size: 1.3em;
+    color: rgb(44, 44, 243);
+    text-align-last: justify;
+}
