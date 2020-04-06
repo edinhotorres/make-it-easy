@@ -1,4 +1,4 @@
-////////////////////////////////////////
+﻿////////////////////////////////////////
 // MAIN TOOLS //////////////////////////
 ////////////////////////////////////////
 let i = 0;
@@ -78,7 +78,7 @@ function busca(e){
     document.getElementsByTagName('body')[0].style.opacity = '40%';
     setTimeout(() => {
         window.open('https://www3.comprasnet.gov.br/sicaf-web/index.jsf');
-        window.open('http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaSegVia/ResultadoSegVia.asp?Origem=1&Tipo=1&NI='+cnpj+'&Senha=');
+        window.open('http://servicos.receita.fazenda.gov.br/Servicos/certidao/CndConjuntaInter/EmiteCertidaoInternet.asp?ni='+cnpj+'&passagens=1&tipo=1');
         window.open('http://www.portaltransparencia.gov.br/sancoes/ceis?paginacaoSimples=true&tamanhoPagina=&offset=&direcaoOrdenacao=asc&colunasSelecionadas=linkDetalhamento%2CcpfCnpj%2Cnome%2CufSancionado%2Corgao%2CtipoSancao%2CdataPublicacao&cpfCnpj='+cnpj);
         window.open('http://portaltransparencia.gov.br/sancoes/cnep?paginacaoSimples=true&tamanhoPagina=&offset=&direcaoOrdenacao=asc&colunasSelecionadas=linkDetalhamento%2CcpfCnpj%2Cnome%2CufSancionado%2Corgao%2CtipoSancao%2CdataInicialSancao%2CdataFinalSancao%2CvalorMulta&cpfCnpj='+cnpj);
         window.open('https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf');
